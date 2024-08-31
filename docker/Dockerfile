@@ -8,8 +8,7 @@ ARG KERNEL_VARIANT=lts
 ENV KERNEL_VARIANT=$KERNEL_VARIANT
 
 RUN \
-apk update --no-check-certificate && \
-apk add --no-cache --no-check-certificate \
+apk add -U --no-cache \
 alpine-sdk=1.0-r1 \
 build-base=0.5-r3 \
 git=2.45.2-r0 \
