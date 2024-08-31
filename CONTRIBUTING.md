@@ -4,6 +4,7 @@ This project uses `pre-commit` alongside a couple of linters to ensure everythin
 ## linters
 - hadolint
 - shellcheck
+- actionlint
 
 ## pre-commit installation
 If you have `pipx` you can just install it with `pipx install pre-commit` and you are good to go

@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+KERNEL_VERSION="${KERNEL_VERSION}-r${KERNEL_RELEASE}"
+
 KVERSION="$(echo "${KERNEL_VERSION}" | sed -r 's/r//')-${KERNEL_VARIANT}"
 export KVERSION
 
@@ -19,3 +21,4 @@ sed -ri "s/^KVERSION.*//" Makefile
 echo "[INFO]"
 make && \
 find ./ -name "*.ko" -exec cp "{}" /output/ \;
+
