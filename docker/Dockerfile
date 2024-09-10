@@ -20,7 +20,7 @@ linux-${KERNEL_VARIANT}-dev=${KERNEL_VERSION}-r${KERNEL_RELEASE}
 
 FROM base AS download
 WORKDIR /coral-tpu-driver
-RUN git clone "https://github.com/google/gasket-driver.git" "gasket-driver" \
+RUN git clone "https://github.com/google/gasket-driver.git" "gasket-driver" && \
 "/usr/src/linux-headers-${KERNEL_VERSION}-${KERNEL_RELEASE}-${KERNEL_VARIANT}/scripts/extract-vmlinux" \
 "/boot/vmlinuz-${KERNEL_VARIANT}" > "/lib/modules/${KERNEL_VERSION}-${KERNEL_RELEASE}-${KERNEL_VARIANT}/build/vmlinux"
 
