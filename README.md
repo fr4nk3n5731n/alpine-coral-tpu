@@ -7,6 +7,7 @@
 ```bash
 git clone https://github.com/fr4nk3n5731n/alpine-coral-tpu.git
 cd alpine-coral-tpu
+git checkout "6.21.2-6.9.9r0-no_llseek-fix"
 make
 ```
 this should create `apex.ko` and `gasket.ko` in the `./output` directory
@@ -19,10 +20,10 @@ this should create `apex.ko` and `gasket.ko` in the `./output` directory
 4. add `gasket` and `apex` to your `/etc/modules` files
 
 ## Example
-assuming that we compiled the modules locally and want to deploy those modules to a target systen running Alpine 3.20 with Kernel `linux-virt` version `6.6.48-r0`
+assuming that we compiled the modules locally and want to deploy those modules to a target system running Alpine 3.21.2 with Kernel `linux-virt` version `6.12.9-r0`
 ```bash
 # on the machine you used to build the modules, copy the files to the target system
-scp "output/*.ko" root@192.168.122.10:/lib/modules/6.6.48-0-virt/
+scp "output/*.ko" root@192.168.122.10:/lib/modules/6.12.9-0-virt/
 
 # on the target system
 depmod
@@ -40,7 +41,7 @@ You might need to reference https://pkgs.alpinelinux.org/packages?branch=v3.20&r
 ## Environment Variables
 | Variable         | Default     | Description        |
 |------------------|-------------|--------------------|
-| `KERNEL_VERSION` | `6.6.48-r0` |                    |
+| `KERNEL_VERSION` | `6.12.9-r0` |                    |
 | `KERNEL_VARIANT` | `virt`      | options: lts, virt |
 
 # TODOs:
