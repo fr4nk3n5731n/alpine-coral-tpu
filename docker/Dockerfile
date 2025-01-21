@@ -21,8 +21,8 @@ linux-${KERNEL_VARIANT}-dev=${KERNEL_VERSION}-r${KERNEL_RELEASE}
 FROM base AS download
 WORKDIR /coral-tpu-driver
 RUN git clone "https://github.com/heitbaum/gasket-driver.git" "gasket-driver" \
-git checkout llseek \
-"/usr/src/linux-headers-${KERNEL_VERSION}-${KERNEL_RELEASE}-${KERNEL_VARIANT}/scripts/extract-vmlinux" \
+&& cd gasket-driver; git checkout llseek \
+&& "/usr/src/linux-headers-${KERNEL_VERSION}-${KERNEL_RELEASE}-${KERNEL_VARIANT}/scripts/extract-vmlinux" \
 "/boot/vmlinuz-${KERNEL_VARIANT}" > "/lib/modules/${KERNEL_VERSION}-${KERNEL_RELEASE}-${KERNEL_VARIANT}/build/vmlinux"
 
 WORKDIR /coral-tpu-driver/gasket-driver/src
