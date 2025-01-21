@@ -19,7 +19,7 @@ this should create `apex.ko` and `gasket.ko` in the `./output` directory
 4. add `gasket` and `apex` to your `/etc/modules` files
 
 ## Example
-assuming that we compiled the modules locally and want to deploy those modules to a target system running Alpine 3.20 with Kernel `linux-virt` version `6.6.48-r0`
+assuming that we compiled the modules locally and want to deploy those modules to a target system running Alpine 3.20.2 with Kernel `linux-virt` version `6.6.71-r0`
 ```bash
 # on the machine you used to build the modules, copy the files to the target system
 scp "output/*.ko" root@192.168.122.10:/lib/modules/6.6.48-0-virt/
@@ -40,7 +40,7 @@ You might need to reference https://pkgs.alpinelinux.org/packages?branch=v3.20&r
 ## Environment Variables
 | Variable         | Default     | Description        |
 |------------------|-------------|--------------------|
-| `KERNEL_VERSION` | `6.6.48-r0` |                    |
+| `KERNEL_VERSION` | `6.6.71-r0` |                    |
 | `KERNEL_VARIANT` | `virt`      | options: lts, virt |
 
 # TODOs:
